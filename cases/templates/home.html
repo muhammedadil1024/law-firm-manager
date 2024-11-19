@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="main">
+        <header class="">
+            <nav class="navbar">
+                <div class="logo"><a href="{% url 'cases:home' %}">Law Firm</a></div>
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'cases:home' %}">Home</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="{% url 'cases:clientlist' %}">Clients</a></li>
+                    <li><a href="{% url 'cases:lawyerlist' %}">Lawyers</a></li>
+                    <li><a href="{% url 'cases:caselist' %}">Cases</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-content">
+            <h1 class="display-5">Welcome to Law Firm</h1>
+            <p>This is a law firm management project created using Python django</p>
+            <button type="button"><a href="#about">Know More</a></button>
+        </div>
+    </div>
+    <section class="container mt-lg-5 mb-5">
+        <h2 class="text-center mt-5 mb-3" id="about">About Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'about.jpeg' %}" class="img-fluid rounded" alt="lawyerImg">            
+            </div>
+            <div class="col-md-6 mt-5">
+                Welcome to <b>Law Firm</b>, your trusted partner in legal matters in the heart of Kochi, Kerala. With a dedication to upholding justice and providing expert legal counsel, our firm has been a beacon of legal excellence in the region for 4 years. At Law Firm, we are committed to delivering top-notch legal services to our clients. Our team of experienced and dedicated attorneys are well-versed in a wide range of legal fields, ensuring that we can provide comprehensive legal solutions tailored to your specific needs. Our firm is based in the vibrant and diverse city of Kochi, but our reach extends far beyond the city limits. We understand the unique legal challenges our clients face in this dynamic region and strive to provide practical solutions. At the same time, we have a global perspective, keeping abreast of legal developments and international standards to offer well-rounded guidance. Your interests are at the heart of everything we do. We take the time to understand your individual needs and objectives, and we work tirelessly to achieve the best possible outcomes for you. Whether you're an individual seeking legal advice or a business in need of corporate counsel, we're here to support you every step of the way.
+            </div>
+        </div>
+    </section>
+    <section class="container mt-5 mb-5" id="contact">
+        <h2 class="text-center mt-2">Contact Us</h2>
+        <div class="contact-us">
+            <div class="contact-form">
+                <form>
+                    <div class="input-container">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black text-white mt-4 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; {% now 'Y' %} Law Firm Muhammed Adil. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

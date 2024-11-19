@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header class="">
+        <nav class="navbar" style="background-color: #000;">
+            <div class="logo"><a href="{% url 'cases:home' %}">Law Firm</a></div>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'cases:home' %}">Home</a></li>
+                <li><a href="{% url 'cases:clientlist' %}">Clients</a></li>
+                <li><a href="{% url 'cases:lawyerlist' %}">Lawyers</a></li>
+                <li><a href="{% url 'cases:caselist' %}">Cases</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main role="main" class="container mt-4 for-height">
+        {% block content %}
+        
+        {% endblock content %}
+    </main>
+    <footer class="bg-black text-white mt-4 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; {% now 'Y' %} Law Firm Muhammed Adil. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+/* Reset some default styles */
+body,
+ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.for-height {
+    height: 100vh;
+}
+
+/* Basic styles for the navbar */
+.navbar {
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8%;
+}
+
+.logo a {
+    font-size: 26px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: transform 0.3s;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffa115;
+}
+
+
+/* This section for background image of home page */
+.main {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    text-align: center;
+    background-image: url(Civil-Law.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+
+.main-content {
+    position: relative;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.main-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.main-content button {
+    padding: 8px 14px;
+    border: 2px solid #ffa115;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all ease .3s;
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+}
+
+.main-content a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-content p {
+    width: 75%;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* Contact form */
+
+.contact-us {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.contact-form {
+    background-color: #d4d0d0;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 70%;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-form form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.input-container {
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.contact-form button {
+    background-color: #ffa115;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 95%;
+    transition: all ease .3s;
+}
+
+.contact-form button:hover {
+    border: 2px solid #000;
+}
+
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 69px;
+        right: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        padding: 3px 20px;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 7px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
