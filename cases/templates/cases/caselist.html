@@ -11,6 +11,7 @@
             <th>Status</th>
             <th>Client</th>
             <th>Lawyer</th>
+            <th>Description</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
                 <td>{{ case.get_status_display }}</td>
                 <td>{{ case.client.first_name }}</td>
                 <td>{{ case.lawyer.first_name }}</td>
+                <td>{{ case.description }}</td>
                 <td>
                     <a href="{% url 'cases:caseupdate' case.pk %}" class="btn btn-sm btn-info">Edit</a>
                     <a href="{% url 'cases:casedelete' case.pk %}" class="btn btn-sm btn-danger">Delete</a>

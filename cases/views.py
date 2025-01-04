@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 class HomeView(TemplateView):
     template_name = "home.html"
 
-# client
+# Client Section
 class ClientListView(ListView):
     model = Client
     template_name = "clients/clientlist.html"
@@ -36,7 +36,7 @@ class ClientDeleteView(DeleteView):
         return context
 
 
-# lawyer
+# Lawyers Section
 class LawyerListView(ListView):
     model = Lawyer
     template_name = "lawyers/lawyerlist.html"
@@ -59,7 +59,7 @@ class LawyerDeleteView(DeleteView):
     success_url = reverse_lazy("cases:lawyerlist")
 
 
-# Case
+# Case Section
 class CaseListView(ListView):
     model = Case
     template_name = "cases/caselist.html"
