@@ -32,6 +32,8 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', "localhost,127.0.0.1,[::1]").split(",")
 
+# uncomment the next line if the above ALLOWED_HOSTS is not working when running locally and comment the above line.
+# ALLOWED_HOSTS = []
 
 # Application definition
 
